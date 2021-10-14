@@ -1,6 +1,11 @@
 {
+  "/categories": "pages/categories.js",
+  "/categories/[slug]": "pages/categories/[slug].js",
+  "/": "pages/index.js",
+  "/products": "pages/products.js",
+  "/products/[permalink]": "pages/products/[permalink].js",
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/": "pages/index.js"
+  "/404": "pages/404.html"
 }

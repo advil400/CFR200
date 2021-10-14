@@ -1,3 +1,4 @@
+import React from "react";
 import commerce from "../lib/commerce";
 import ProductList from "../components/ProductList";
 
