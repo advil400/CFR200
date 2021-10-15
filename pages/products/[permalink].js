@@ -1,11 +1,12 @@
 import React from "react";
 import commerce from "../../lib/commerce";
+import { useCartDispatch } from "../../context/cart";
 
 export async function getStaticProps({ params }) {
   const { permalink } = params;
 
   const product = await commerce.products.retrieve(permalink, {
-    type: 'permalink',
+    type: "permalink",
   });
 
   return {
@@ -29,10 +30,16 @@ export async function getStaticPaths() {
 }
 
 export default function ProductPage({ product }) {
+  const { setCart } = useCartDispatch();
+
+  const addToCart = () =>
+    commerce.cart.add(product.id).then(({ cart }) => setCart(cart));
+
   return (
     <React.Fragment>
       <h1>{product.name}</h1>
       <p>{product.price.formatted_with_symbol}</p>
+      <button onClick={addToCart}>Add to Cart</button>
     </React.Fragment>
   );
 }

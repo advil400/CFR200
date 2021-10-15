@@ -23,15 +23,15 @@ export default function IndexPage({ merchant, categories, products }) {
     return (
       <React.Fragment>
         <h1>Chemin de Fer</h1>
-
+{/*
         <h3>
           <Link href="/categories">
             <a>Categories</a>
           </Link>
         </h3>
 
-      <CategoryList categories={categories} />
-
+        <CategoryList categories={categories} />
+*/}
 
         <h3>
           <Link href="/products">
