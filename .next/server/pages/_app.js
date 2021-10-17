@@ -41,6 +41,13 @@ module.exports = require("@chec/commerce.js");
 
 /***/ }),
 
+/***/ 762:
+/***/ ((module) => {
+
+module.exports = require("framer-motion");
+
+/***/ }),
+
 /***/ 297:
 /***/ ((module) => {
 

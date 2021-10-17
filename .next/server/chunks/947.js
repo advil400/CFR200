@@ -11,11 +11,13 @@ exports.modules = {
 /* harmony export */   "KO": () => (/* binding */ useCartState),
 /* harmony export */   "dD": () => (/* binding */ useCartDispatch)
 /* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(297);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _lib_commerce__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(141);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(282);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(762);
+/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(framer_motion__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(297);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _lib_commerce__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(141);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(282);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__);
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -25,9 +27,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-const CartStateContext = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createContext)();
-const CartDispatchContext = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createContext)();
+
+const CartStateContext = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_1__.createContext)();
+const CartDispatchContext = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_1__.createContext)();
 const SET_CART = "SET_CART";
+const RESET = "RESET";
 const initialState = {
   total_items: 0,
   total_unique_items: 0,
@@ -39,6 +43,9 @@ const reducer = (state, action) => {
     case SET_CART:
       return _objectSpread(_objectSpread({}, state), action.payload);
 
+    case RESET:
+      return initialState;
+
     default:
       throw new Error(`Unknown action: ${action.type}`);
   }
@@ -47,11 +54,12 @@ const reducer = (state, action) => {
 const CartProvider = ({
   children
 }) => {
+  const [open, toggle] = (0,framer_motion__WEBPACK_IMPORTED_MODULE_0__.useCycle)(false, true);
   const {
     0: state,
     1: dispatch
-  } = (0,react__WEBPACK_IMPORTED_MODULE_0__.useReducer)(reducer, initialState);
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+  } = (0,react__WEBPACK_IMPORTED_MODULE_1__.useReducer)(reducer, initialState);
+  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(() => {
     getCart();
   }, []);
 
@@ -62,25 +70,45 @@ const CartProvider = ({
 
   const getCart = async () => {
     try {
-      const cart = await _lib_commerce__WEBPACK_IMPORTED_MODULE_1__/* .default.cart.retrieve */ .Z.cart.retrieve();
-      setCart(cart);
+      const cart = await _lib_commerce__WEBPACK_IMPORTED_MODULE_2__.commerce.cart.retrieve();
+      dispatch({
+        type: SET_CART,
+        payload: cart
+      });
     } catch (err) {
       console.log(err);
     }
   };
 
-  return /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx(CartDispatchContext.Provider, {
+  const showCart = () => {
+    toggle();
+  };
+
+  const closeCart = () => {
+    toggle();
+  };
+
+  const reset = async () => dispatch({
+    type: RESET
+  });
+
+  return /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx(CartDispatchContext.Provider, {
     value: {
-      setCart
+      setCart,
+      showCart,
+      closeCart,
+      reset
     },
-    children: /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx(CartStateContext.Provider, {
-      value: state,
+    children: /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx(CartStateContext.Provider, {
+      value: _objectSpread({
+        open
+      }, state),
       children: children
     })
   });
 };
-const useCartState = () => (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(CartStateContext);
-const useCartDispatch = () => (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(CartDispatchContext);
+const useCartState = () => (0,react__WEBPACK_IMPORTED_MODULE_1__.useContext)(CartStateContext);
+const useCartDispatch = () => (0,react__WEBPACK_IMPORTED_MODULE_1__.useContext)(CartDispatchContext);
 
 /***/ }),
 

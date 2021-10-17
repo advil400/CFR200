@@ -5,22 +5,52 @@ exports.id = 405;
 exports.ids = [405];
 exports.modules = {
 
-/***/ 124:
+/***/ 508:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+// ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "getStaticProps": () => (/* binding */ getStaticProps),
-/* harmony export */   "default": () => (/* binding */ IndexPage)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(297);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _lib_commerce__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(141);
-/* harmony import */ var _components_ProductList__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(554);
-/* harmony import */ var _components_CategoryList__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(203);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(664);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(282);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__);
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  "default": () => (/* binding */ IndexPage),
+  "getStaticProps": () => (/* binding */ getStaticProps)
+});
+
+// EXTERNAL MODULE: external "react"
+var external_react_ = __webpack_require__(297);
+var external_react_default = /*#__PURE__*/__webpack_require__.n(external_react_);
+// EXTERNAL MODULE: ./lib/commerce.js
+var commerce = __webpack_require__(141);
+// EXTERNAL MODULE: ./context/cart.js
+var cart = __webpack_require__(947);
+// EXTERNAL MODULE: ./node_modules/next/link.js
+var next_link = __webpack_require__(664);
+// EXTERNAL MODULE: external "react/jsx-runtime"
+var jsx_runtime_ = __webpack_require__(282);
+;// CONCATENATED MODULE: ./components/CartSummary.js
+
+
+
+
+
+function CartSummary() {
+  const {
+    total_unique_items
+  } = (0,cart/* useCartState */.KO)();
+  return /*#__PURE__*/jsx_runtime_.jsx(next_link.default, {
+    href: "/cart",
+    passHref: true,
+    children: /*#__PURE__*/(0,jsx_runtime_.jsxs)("button", {
+      children: ["Cart (", total_unique_items, ")"]
+    })
+  });
+}
+
+/* harmony default export */ const components_CartSummary = (CartSummary);
+// EXTERNAL MODULE: ./components/ProductList.js + 1 modules
+var ProductList = __webpack_require__(554);
+;// CONCATENATED MODULE: ./pages/index.js
 
 
 
@@ -29,37 +59,31 @@ __webpack_require__.r(__webpack_exports__);
 
 
 async function getStaticProps() {
-  const merchant = await _lib_commerce__WEBPACK_IMPORTED_MODULE_1__/* .default.merchants.about */ .Z.merchants.about();
-  const {
-    data: categories
-  } = await _lib_commerce__WEBPACK_IMPORTED_MODULE_1__/* .default.categories.list */ .Z.categories.list();
   const {
     data: products
-  } = await _lib_commerce__WEBPACK_IMPORTED_MODULE_1__/* .default.products.list */ .Z.products.list();
+  } = await commerce/* default.products.list */.Z.products.list();
   return {
     props: {
-      merchant,
-      categories,
       products
     }
   };
 }
 function IndexPage({
-  merchant,
-  categories,
   products
 }) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), {
-    children: [/*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx("h1", {
+  return /*#__PURE__*/(0,jsx_runtime_.jsxs)((external_react_default()).Fragment, {
+    children: [/*#__PURE__*/jsx_runtime_.jsx("h1", {
       children: "Chemin de Fer"
-    }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx("h3", {
-      children: /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx(next_link__WEBPACK_IMPORTED_MODULE_4__.default, {
+    }), /*#__PURE__*/jsx_runtime_.jsx("div", {
+      children: /*#__PURE__*/jsx_runtime_.jsx(components_CartSummary, {})
+    }), /*#__PURE__*/jsx_runtime_.jsx("h3", {
+      children: /*#__PURE__*/jsx_runtime_.jsx(next_link.default, {
         href: "/products",
-        children: /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx("a", {
+        children: /*#__PURE__*/jsx_runtime_.jsx("a", {
           children: "Products"
         })
       })
-    }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx(_components_ProductList__WEBPACK_IMPORTED_MODULE_2__/* .default */ .Z, {
+    }), /*#__PURE__*/jsx_runtime_.jsx(ProductList/* default */.Z, {
       products: products
     })]
   });
@@ -71,6 +95,13 @@ function IndexPage({
 /***/ ((module) => {
 
 module.exports = require("@chec/commerce.js");
+
+/***/ }),
+
+/***/ 762:
+/***/ ((module) => {
+
+module.exports = require("framer-motion");
 
 /***/ }),
 
@@ -172,7 +203,7 @@ module.exports = require("react/jsx-runtime");
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [664,482,203], () => (__webpack_exec__(124)));
+var __webpack_exports__ = __webpack_require__.X(0, [426,664,947,498], () => (__webpack_exec__(508)));
 module.exports = __webpack_exports__;
 
 })();

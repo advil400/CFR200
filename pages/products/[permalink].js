@@ -1,5 +1,8 @@
 import React from "react";
 import commerce from "../../lib/commerce";
+import VariantPicker from "../../components/VariantPicker";
+import ProductImages from "../../components/ProductImages";
+
 import { useCartDispatch } from "../../context/cart";
 
 export async function getStaticProps({ params }) {
@@ -13,6 +16,7 @@ export async function getStaticProps({ params }) {
     props: {
       product,
     },
+    
   };
 }
 
@@ -31,15 +35,50 @@ export async function getStaticPaths() {
 
 export default function ProductPage({ product }) {
   const { setCart } = useCartDispatch();
+  
+  const {
+    variant_groups: variantGroups,
+    assets,
+  } = product;
+
+  const images = assets.filter(({ is_image }) => is_image);
+  
+
+  const initialVariants = React.useMemo(
+    () =>
+      variantGroups.reduce((all, { id, options }) => {
+        const [firstOption] = options;
+
+        return { ...all, [id]: firstOption.id };
+      }, {}),
+    [product.permalink]
+  );
+
+  const [selectedVariants, setSelectedVariants] = React.useState(
+    initialVariants
+  );
+
+  const handleVariantChange = ({ target: { id, value } }) =>
+    setSelectedVariants({
+      ...selectedVariants,
+      [id]: value,
+    });
 
   const addToCart = () =>
-    commerce.cart.add(product.id).then(({ cart }) => setCart(cart));
+    commerce.cart.add(product.id, selectedVariants).then(({ cart }) => {setCart(cart);return cart;})
 
   return (
     <React.Fragment>
       <h1>{product.name}</h1>
+      <ProductImages images={images} />
       <p>{product.price.formatted_with_symbol}</p>
+      <VariantPicker
+                    variantGroups={variantGroups}
+                    defaultValues={initialVariants}
+                    onChange={handleVariantChange}
+                  />
       <button onClick={addToCart}>Add to Cart</button>
+      
     </React.Fragment>
   );
 }

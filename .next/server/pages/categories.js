@@ -20,21 +20,60 @@ const client = new (_chec_commerce_js__WEBPACK_IMPORTED_MODULE_0___default())("p
 
 /***/ }),
 
-/***/ 126:
+/***/ 419:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
+// ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "getStaticProps": () => (/* binding */ getStaticProps),
-/* harmony export */   "default": () => (/* binding */ CategoriesPage)
-/* harmony export */ });
-/* harmony import */ var _lib_commerce__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(141);
-/* harmony import */ var _components_CategoryList__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(203);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(297);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(282);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__);
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  "default": () => (/* binding */ CategoriesPage),
+  "getStaticProps": () => (/* binding */ getStaticProps)
+});
+
+// EXTERNAL MODULE: ./lib/commerce.js
+var commerce = __webpack_require__(141);
+// EXTERNAL MODULE: ./node_modules/next/link.js
+var next_link = __webpack_require__(664);
+;// CONCATENATED MODULE: ./components/category.js
+function Category({
+  name
+}) {
+  return name;
+}
+// EXTERNAL MODULE: external "react/jsx-runtime"
+var jsx_runtime_ = __webpack_require__(282);
+;// CONCATENATED MODULE: ./components/CategoryList.js
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+function CategoryList({
+  categories
+}) {
+  if (!categories) return null;
+  return /*#__PURE__*/jsx_runtime_.jsx("ul", {
+    children: categories.map(category => /*#__PURE__*/jsx_runtime_.jsx("li", {
+      children: /*#__PURE__*/jsx_runtime_.jsx(next_link.default, {
+        href: `/categories/${category.slug}`,
+        children: /*#__PURE__*/jsx_runtime_.jsx("a", {
+          children: /*#__PURE__*/jsx_runtime_.jsx(Category, _objectSpread({}, category))
+        })
+      })
+    }, category.slug))
+  });
+}
+// EXTERNAL MODULE: external "react"
+var external_react_ = __webpack_require__(297);
+var external_react_default = /*#__PURE__*/__webpack_require__.n(external_react_);
+;// CONCATENATED MODULE: ./pages/categories.js
 
 
 
@@ -43,7 +82,7 @@ __webpack_require__.r(__webpack_exports__);
 async function getStaticProps() {
   const {
     data: categories
-  } = await _lib_commerce__WEBPACK_IMPORTED_MODULE_0__/* .default.categories.list */ .Z.categories.list();
+  } = await commerce/* default.categories.list */.Z.categories.list();
   return {
     props: {
       categories
@@ -53,10 +92,10 @@ async function getStaticProps() {
 function CategoriesPage({
   categories
 }) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)((react__WEBPACK_IMPORTED_MODULE_2___default().Fragment), {
-    children: [/*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx("h1", {
+  return /*#__PURE__*/(0,jsx_runtime_.jsxs)((external_react_default()).Fragment, {
+    children: [/*#__PURE__*/jsx_runtime_.jsx("h1", {
       children: "Categories"
-    }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx(_components_CategoryList__WEBPACK_IMPORTED_MODULE_1__/* .default */ .Z, {
+    }), /*#__PURE__*/jsx_runtime_.jsx(CategoryList, {
       categories: categories
     })]
   });
@@ -190,7 +229,7 @@ module.exports = require("react/jsx-runtime");
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [664,203], () => (__webpack_exec__(126)));
+var __webpack_exports__ = __webpack_require__.X(0, [426,664], () => (__webpack_exec__(419)));
 module.exports = __webpack_exports__;
 
 })();

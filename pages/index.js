@@ -1,37 +1,29 @@
 import React from "react";
 import commerce from "../lib/commerce";
+import CartSummary from "../components/CartSummary";
 import ProductList from "../components/ProductList";
-import CategoryList from "../components/CategoryList";
 import Link from "next/link";
 
 
 export async function getStaticProps() {
-  const merchant = await commerce.merchants.about();
-  const { data: categories } = await commerce.categories.list();
   const { data: products } = await commerce.products.list();
 
   return {
-    props: {
-      merchant,
-      categories,
+    props: {   
       products,
     },
   };
 }
 
-export default function IndexPage({ merchant, categories, products }) {
+export default function IndexPage({ products }) {
     return (
       <React.Fragment>
+        
+        
         <h1>Chemin de Fer</h1>
-{/*
-        <h3>
-          <Link href="/categories">
-            <a>Categories</a>
-          </Link>
-        </h3>
-
-        <CategoryList categories={categories} />
-*/}
+        <div>
+        <CartSummary />
+        </div>
 
         <h3>
           <Link href="/products">
