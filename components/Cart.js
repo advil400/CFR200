@@ -23,8 +23,7 @@ export default function Cart() {
         ) : (
           <>
             <div>
-              Total: {subtotal?.formatted_with_symbol}, {total_unique_items}{" "}
-              {total_unique_items === 1 ? "item" : "items"}
+              Subtotal: {subtotal?.formatted_with_symbol} 
             </div>
             
           </>

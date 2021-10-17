@@ -68,6 +68,7 @@ function CartItem({ id, name, quantity, line_total, selected_options }) {
                 +
               </button>
             </div>
+            
             <div>
               <button
                 onClick={handleRemoveItem}

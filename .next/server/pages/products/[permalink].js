@@ -131,7 +131,8 @@ async function getStaticProps({
   return {
     props: {
       product
-    }
+    },
+    revalidate: 60
   };
 }
 async function getStaticPaths() {
@@ -160,15 +161,17 @@ function ProductPage({
   const images = assets.filter(({
     is_image
   }) => is_image);
-  const initialVariants = external_react_default().useMemo(() => variantGroups.reduce((all, {
-    id,
-    options
-  }) => {
-    const [firstOption] = options;
-    return _permalink_objectSpread(_permalink_objectSpread({}, all), {}, {
-      [id]: firstOption.id
-    });
-  }, {}), [product.permalink]);
+  const initialVariants = external_react_default().useMemo(() => {
+    return variantGroups.reduce((all, {
+      id,
+      options
+    }) => {
+      const [firstOption] = options;
+      return _permalink_objectSpread(_permalink_objectSpread({}, all), {}, {
+        [id]: firstOption.id
+      });
+    }, {});
+  }, [product.permalink]);
   const [selectedVariants, setSelectedVariants] = external_react_default().useState(initialVariants);
 
   const handleVariantChange = ({
@@ -180,7 +183,7 @@ function ProductPage({
     [id]: value
   }));
 
-  const addToCart = () => commerce/* default.cart.add */.Z.cart.add(product.id, selectedVariants).then(({
+  const addToCart = () => commerce/* default.cart.add */.Z.cart.add(product.id, 1, selectedVariants).then(({
     cart
   }) => {
     setCart(cart);

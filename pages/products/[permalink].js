@@ -16,6 +16,7 @@ export async function getStaticProps({ params }) {
     props: {
       product,
     },
+    revalidate: 60,
     
   };
 }
@@ -43,15 +44,16 @@ export default function ProductPage({ product }) {
 
   const images = assets.filter(({ is_image }) => is_image);
   
-
   const initialVariants = React.useMemo(
     () =>
-      variantGroups.reduce((all, { id, options }) => {
-        const [firstOption] = options;
+      {
+        return variantGroups.reduce((all, { id, options }) => {
+          const [firstOption] = options;
 
-        return { ...all, [id]: firstOption.id };
-        
-      }, {}),
+          return { ...all, [id]: firstOption.id };
+
+        }, {});
+      },
     [product.permalink]
   );
 
@@ -66,7 +68,7 @@ export default function ProductPage({ product }) {
     });
 
   const addToCart = () =>
-    commerce.cart.add(product.id, selectedVariants).then(({ cart }) => {setCart(cart);return cart;})
+    commerce.cart.add(product.id, 1, selectedVariants).then(({ cart }) => {setCart(cart);return cart;})
 
   return (
     <React.Fragment>
