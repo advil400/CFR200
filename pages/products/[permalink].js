@@ -50,6 +50,7 @@ export default function ProductPage({ product }) {
         const [firstOption] = options;
 
         return { ...all, [id]: firstOption.id };
+        
       }, {}),
     [product.permalink]
   );
@@ -71,7 +72,8 @@ export default function ProductPage({ product }) {
     <React.Fragment>
       <h1>{product.name}</h1>
       <ProductImages images={images} />
-      <p>{product.price.formatted_with_symbol}</p>
+      <p>{product.price.formatted_with_symbol}
+          {product.description}</p>
       <VariantPicker
                     variantGroups={variantGroups}
                     defaultValues={initialVariants}

@@ -1,10 +1,10 @@
 import React from "react";
-import Image from "next/image";
 
-import { commerce } from "../lib/commerce";
+
+import  commerce  from "../lib/commerce";
 import { useCartDispatch } from "../context/cart";
 
-function CartItem({ id, media, name, quantity, line_total, selected_options }) {
+function CartItem({ id, name, quantity, line_total, selected_options }) {
   const { setCart } = useCartDispatch();
   const hasVariants = selected_options.length >= 1;
 
@@ -38,15 +38,6 @@ function CartItem({ id, media, name, quantity, line_total, selected_options }) {
   return (
     <div >
       <div>
-        <Image
-          src={media.source}
-          alt={name}
-          layout="fill"
-          loading="eager"
-          priority={true}
-        />
-      </div>
-      <div>
         <div>
           <p>
             {name}
@@ -67,14 +58,10 @@ function CartItem({ id, media, name, quantity, line_total, selected_options }) {
           </div>
           <div>
             <div>
-              <span>Quantity:</span>
-              <button
-                onClick={decrementQuantity}
-                
-              >
+              <button onClick={decrementQuantity}>
                 -
               </button>
-              <span>{quantity}</span>
+              <span> {quantity} </span>
               <button
                 onClick={incrementQuantity}
               >

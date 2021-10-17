@@ -70,7 +70,7 @@ const CartProvider = ({
 
   const getCart = async () => {
     try {
-      const cart = await _lib_commerce__WEBPACK_IMPORTED_MODULE_2__.commerce.cart.retrieve();
+      const cart = await _lib_commerce__WEBPACK_IMPORTED_MODULE_2__/* .default.cart.retrieve */ .Z.cart.retrieve();
       dispatch({
         type: SET_CART,
         payload: cart

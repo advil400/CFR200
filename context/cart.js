@@ -1,7 +1,7 @@
 import {useCycle} from "framer-motion";
 import { createContext, useReducer, useContext, useEffect } from "react";
 
-import {commerce} from "../lib/commerce";
+import commerce from "../lib/commerce";
 
 const CartStateContext = createContext();
 const CartDispatchContext = createContext();
