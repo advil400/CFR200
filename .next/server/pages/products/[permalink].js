@@ -131,8 +131,7 @@ async function getStaticProps({
   return {
     props: {
       product
-    },
-    revalidate: 60
+    }
   };
 }
 async function getStaticPaths() {
@@ -195,9 +194,7 @@ function ProductPage({
       children: product.name
     }), /*#__PURE__*/jsx_runtime_.jsx(components_ProductImages, {
       images: images
-    }), /*#__PURE__*/(0,jsx_runtime_.jsxs)("p", {
-      children: [product.price.formatted_with_symbol, product.description]
-    }), /*#__PURE__*/jsx_runtime_.jsx(components_VariantPicker, {
+    }), product.price.formatted_with_symbol, product.description, /*#__PURE__*/jsx_runtime_.jsx(components_VariantPicker, {
       variantGroups: variantGroups,
       defaultValues: initialVariants,
       onChange: handleVariantChange

@@ -49,7 +49,7 @@ function CartSummary() {
 
 /* harmony default export */ const components_CartSummary = (CartSummary);
 // EXTERNAL MODULE: ./components/ProductList.js + 1 modules
-var ProductList = __webpack_require__(554);
+var ProductList = __webpack_require__(756);
 ;// CONCATENATED MODULE: ./pages/index.js
 
 
@@ -203,7 +203,7 @@ module.exports = require("react/jsx-runtime");
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [426,664,947,498], () => (__webpack_exec__(508)));
+var __webpack_exports__ = __webpack_require__.X(0, [426,664,947,736], () => (__webpack_exec__(508)));
 module.exports = __webpack_exports__;
 
 })();

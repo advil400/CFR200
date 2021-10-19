@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import Product from "./product";
+import Product from "./Product";
 
 export default function ProductList({ products }) {
   if (!products) return null;

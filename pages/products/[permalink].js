@@ -16,7 +16,7 @@ export async function getStaticProps({ params }) {
     props: {
       product,
     },
-    revalidate: 60,
+    
     
   };
 }
@@ -74,8 +74,8 @@ export default function ProductPage({ product }) {
     <React.Fragment>
       <h1>{product.name}</h1>
       <ProductImages images={images} />
-      <p>{product.price.formatted_with_symbol}
-          {product.description}</p>
+          {product.price.formatted_with_symbol}
+          {product.description}
       <VariantPicker
                     variantGroups={variantGroups}
                     defaultValues={initialVariants}

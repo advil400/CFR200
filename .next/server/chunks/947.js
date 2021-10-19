@@ -120,7 +120,6 @@ const useCartDispatch = () => (0,react__WEBPACK_IMPORTED_MODULE_1__.useContext)(
 /* harmony export */ });
 /* harmony import */ var _chec_commerce_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(514);
 /* harmony import */ var _chec_commerce_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_chec_commerce_js__WEBPACK_IMPORTED_MODULE_0__);
-// lib/commerce.js
 
 const client = new (_chec_commerce_js__WEBPACK_IMPORTED_MODULE_0___default())("pk_test_30748196bb150b00e363ff64c38163180441337e2ed12");
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (client);
