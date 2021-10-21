@@ -14,7 +14,7 @@
   "license": "ISC",
   "dependencies": {
     "@chec/commerce.js": "^2.8.0",
-    "@types/chec__commerce.js": "^2.7.5",
+    "@types/chec__commerce.js": "^2.8.0",
     "@types/jest": "^27.0.2",
     "@types/node": "^16.11.0",
     "@types/react": "^17.0.30",
