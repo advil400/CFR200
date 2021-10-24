@@ -2,6 +2,7 @@ import React from "react";
 import commerce from "../../lib/commerce";
 import VariantPicker from "../../components/VariantPicker";
 import ProductImages from "../../components/ProductImages";
+import Header from "../../components/Header";
 
 import { useCartDispatch } from "../../context/cart";
 
@@ -72,17 +73,23 @@ export default function ProductPage({ product }) {
 
   return (
     <React.Fragment>
+    <div className="container block mx-auto">
+    <header className="col-span-3 row-span-1 inline-block object-top pb-20">
+    <Header />
+    </header>
+    </div>
+    <div className="static inline-block mx-auto">
       <h1>{product.name}</h1>
       <ProductImages images={images} />
           {product.price.formatted_with_symbol}
-          {product.description}
+          <div>{product.description}</div>
       <VariantPicker
                     variantGroups={variantGroups}
                     defaultValues={initialVariants}
                     onChange={handleVariantChange}
                   />
-      <button onClick={addToCart}>Add to Cart</button>
-      
+      <button className="appearance-none" onClick={addToCart}>Add to Cart</button>
+    </div>
     </React.Fragment>
   );
 }

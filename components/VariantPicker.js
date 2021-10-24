@@ -13,7 +13,7 @@ function VariantPicker({ variantGroups = [], defaultValues = {}, ...props }) {
             {group.name}:
           </label>
 
-          <select
+          <select className=""
             id={group.id}
             defaultValue={defaultValues[group.id]}
             {...props}

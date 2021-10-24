@@ -9,7 +9,7 @@ function Header() {
   return (
     <header className="block md:fixed md:left-0 md:top-0 w-full z-50">
       <Link href="/" passHref={true}>
-          <div className="inline-block fixed top-5 left-5 hover:blur-xs">
+          <div className=" fixed top-5 left-5 hover:blur-xs">
           <Image src={CF} height='30%' width='30%' alt="Chemin De Fer Logo" />
           </div>
       </Link>
