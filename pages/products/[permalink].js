@@ -3,6 +3,7 @@ import commerce from "../../lib/commerce";
 import VariantPicker from "../../components/VariantPicker";
 import ProductImages from "../../components/ProductImages";
 import Header from "../../components/Header";
+import Head from "next/head";
 
 import { useCartDispatch } from "../../context/cart";
 
@@ -73,6 +74,11 @@ export default function ProductPage({ product }) {
 
   return (
     <React.Fragment>
+    <Head>
+        <meta charset="UTF-8"/>
+        <title>{permalink}</title>
+        <html lang="en" />
+      </Head>
     <div className="container block mx-auto">
     <header className="col-span-3 row-span-1 inline-block object-top pb-20">
     <Header />
