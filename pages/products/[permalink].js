@@ -78,11 +78,15 @@ export default function ProductPage({ product }) {
     <Header />
     </header>
     </div>
+    <div className="container mx-auto">
     <div className="static inline-block mx-auto">
-      <h1>{product.name}</h1>
+      <h1 font-sans>{product.name}</h1>
+      <div className="inline-block xl:scale-75 pb-40">
       <ProductImages images={images} />
-          {product.price.formatted_with_symbol}
-          <div>{product.description}</div>
+      </div>
+      {product.price.formatted_with_symbol}
+      <div>{product.description}</div>
+    </div>
       <VariantPicker
                     variantGroups={variantGroups}
                     defaultValues={initialVariants}

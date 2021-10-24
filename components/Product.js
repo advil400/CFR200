@@ -4,12 +4,23 @@ import React from "react";
 
 
 
-function Product({ url, name, permalink, price }) {
+function Product({ media, name, permalink, price }) {
   
-  return (
-    <React.Fragment>
+  return (    
     <Link href={`/products/${permalink}`}>
-    <a href="/" className="hover:text-gray-600">
+      <a className="group relative hover:text-gray-600">
+        {media?.source && (
+          <div className="relative rounded-lg w-full">
+            <Image
+              src={media.source}
+              alt={Product.name}
+              layout="fill"
+              sizes="616px, (min-width: 768px): 352px, (min-width: 1024px): 232px, (min-width: 1280px): 288px"
+              className="object-cover"
+              priority={true}
+            />
+          </div>
+        )}          
         <div className="flex justify-evenly py-2 md:py-3 space-x-1">
           <span className="text-sm md:text-base lg:text-lg">{name}</span>
           <span className="text-sm md:text-base lg:text-lg">
@@ -19,7 +30,6 @@ function Product({ url, name, permalink, price }) {
     </a>
     </Link>     
     
-    </React.Fragment>
   );
 }
 

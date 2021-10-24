@@ -1,21 +1,23 @@
 import Link from "next/link";
 
-import Product from "./Product";
-import ProductImages from "./ProductImages";
 
-export default function ProductList({ products }) {
-  if (!products) return null;
 
-  return (
-    <div>
-      {products.map((product) => (
-        <p key={product.permalink}>
-          <ProductImages  {...product}/>
-          <Link href={`/products/${product.permalink}`} passHref={true}>
-              <Product {...product} />   
-          </Link>
-        </p>
-      ))}
-    </div>
-  );
+function ProductList({ products }) {
+  if (!products || products.length === 0) return null;
+
+  return products.map(({ name, permalink, price, images }, index) => (
+    <span key={permalink}>
+    {index ? ", " : ""}
+    <Link href={`/products/${permalink}`}>
+      <a className="flex justify-evenly py-2 md:py-3 space-x-1">
+          <span className="text-sm md:text-base lg:text-lg">{name}</span>
+          <span className="text-sm md:text-base lg:text-lg">
+            {price.formatted_with_symbol}
+          </span>
+      </a>
+    </Link>
+  </span>
+));
 }
+
+export default ProductList;
