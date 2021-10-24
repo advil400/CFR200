@@ -6,16 +6,16 @@ export default function ProductList({ products }) {
   if (!products) return null;
 
   return (
-    <ul>
+    <div>
       {products.map((product) => (
-        <li key={product.permalink}>
-          <Link href={`/products/${product.permalink}`}>
+        <p key={product.permalink}>
+          <Link href={`/products/${product.permalink}`} passHref={true}>
             <a>
               <Product {...product} />
             </a>
           </Link>
-        </li>
+        </p>
       ))}
-    </ul>
+    </div>
   );
 }

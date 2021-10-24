@@ -2,7 +2,10 @@ import React from "react";
 import commerce from "../lib/commerce";
 import CartSummary from "../components/CartSummary";
 import ProductList from "../components/ProductList";
-import Link from "next/link";
+import Header from "../components/Header";
+
+
+
 
 
 export async function getStaticProps() {
@@ -18,20 +21,15 @@ export async function getStaticProps() {
 export default function IndexPage({ products }) {
     return (
       <React.Fragment>
-        
-        
-        <h1>Chemin de Fer</h1>
-        <div>
-        <CartSummary />
+      <div className="container mx-auto">
+        <div className="flex-col block object-top">
+        <Header />       
         </div>
-
-        <h3>
-          <Link href="/products">
-            <a>Products</a>
-          </Link>
-        </h3>
-
+      	
+        <div className="flex-col relative block object-center">
         <ProductList products={products} />
+        </div>
+      </div>
       </React.Fragment>
     );
   }
