@@ -76,7 +76,7 @@ export default function ProductPage({ product }) {
     <React.Fragment>
     <Head>
         <meta charset="UTF-8"/>
-        <title>{permalink}</title>
+        <title>Product Page</title>
         <html lang="en" />
       </Head>
     <div className="container block mx-auto">
