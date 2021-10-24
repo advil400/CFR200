@@ -21,12 +21,12 @@ export async function getStaticProps() {
 export default function IndexPage({ products }) {
     return (
       <React.Fragment>
-      <div className="container mx-auto">
-        <div className="flex-col block object-top">
+      <div className="container block mx-auto grid-cols-3 grid-rows-3">
+        <div className="col-span-3 row-span-1 inline-block object-top pb-10">
         <Header />       
         </div>
       	
-        <div className="flex-col relative block object-center">
+        <div className="row-start-2 relative block object-center">
         <ProductList products={products} />
         </div>
       </div>
