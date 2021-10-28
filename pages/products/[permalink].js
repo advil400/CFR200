@@ -91,7 +91,7 @@ export default function ProductPage({ product }) {
       </div>
       <h1 font-sans>{product.name}</h1>
       {product.price.formatted_with_symbol}
-      <div>{product.description}</div>
+      <p>{product.description}</p>
     </div>
       <VariantPicker
                     variantGroups={variantGroups}
