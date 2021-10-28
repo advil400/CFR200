@@ -87,22 +87,23 @@ export default function ProductPage({ product }) {
     </header>
     </div>
 
-    <div className="container px-20 z-40">
+    <div className="container pt-10 pb-5 px-20 z-40">
       <div className="flex justify-evenly">     
-       <div className="object-scale-down">
+       <div className="">
         <ProductImages images={images} />
        </div>
       </div>
     </div>
 
-    <div className="container mx-auto">
+    <div className="container place-self-center mx-auto ">
 
     <div className="flex justify-evenly">
-    <span className="text-sm md:text-base lg:text-lg">{product.name}</span>
-    <span className="text-sm md:text-base lg:text-lg">{product.price.formatted_with_symbol}</span>
+    <span className="font-medium sm:text-base md:text-lg lg:text-2xl xl:text-3xl">{product.name}</span>
+    <span className="font-normal sm:text-sm md:text-base lg:text-lg">{product.price.formatted_with_symbol}</span>
     </div>
 
-    <div className="flex justify-evenly py-2 md:py-3 space-x-2">
+    <div className="block mx-auto bg-gray-50 text-black border-1 rounded-lg border-gray-300">
+    <div className="flex box-content justify-evenly ">
       <VariantPicker
                     variantGroups={variantGroups}
                     defaultValues={initialVariants}
@@ -110,8 +111,9 @@ export default function ProductPage({ product }) {
                   />
       <button onClick={addToCart}>Add to Cart</button>
       </div>
+      </div>
     <div className="flex justify-self-start py-2 md:py-3 space-x-2">
-    <p>Screenprinted in Tokyo by @creationprintingservice</p>
+    <p className="font-normal">Screenprinted in Tokyo by @creationprintingservice</p>
     </div>
     </div>
     </React.Fragment>

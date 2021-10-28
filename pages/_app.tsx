@@ -1,6 +1,7 @@
 import 'tailwindcss/tailwind.css'
 import type { AppProps /*, AppContext */ } from 'next/app'
 import { CartProvider } from "../context/cart"
+import '../styles/globals.css'
 
 
 
