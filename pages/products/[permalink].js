@@ -74,31 +74,45 @@ export default function ProductPage({ product }) {
 
   return (
     <React.Fragment>
+
     <Head>
         <meta charSet="UTF-8"/>
         <title>Product Page</title>
         <html lang="en" />
-      </Head>
-    <div className="container block mx-auto">
-    <header className="col-span-3 row-span-1 inline-block object-top pb-20">
+    </Head>
+
+    <div className="container fixed block mx-auto z-50">
+    <header className="col-span-3 row-span-1 object-top pb-20">
     <Header />
     </header>
     </div>
-    <div className="container mx-auto">
-    <div className="static inline-block mx-auto">     
-      <div className="inline-block xl:scale-75">
-      <ProductImages images={images} />
+
+    <div className="container px-20 z-40">
+      <div className="flex justify-evenly">     
+       <div className="object-scale-down">
+        <ProductImages images={images} />
+       </div>
       </div>
-      <h1 font-sans>{product.name}</h1>
-      {product.price.formatted_with_symbol}
-      <p>{product.description}</p>
     </div>
+
+    <div className="container mx-auto">
+
+    <div className="flex justify-evenly">
+    <span className="text-sm md:text-base lg:text-lg">{product.name}</span>
+    <span className="text-sm md:text-base lg:text-lg">{product.price.formatted_with_symbol}</span>
+    </div>
+
+    <div className="flex justify-evenly py-2 md:py-3 space-x-2">
       <VariantPicker
                     variantGroups={variantGroups}
                     defaultValues={initialVariants}
                     onChange={handleVariantChange}
                   />
       <button onClick={addToCart}>Add to Cart</button>
+      </div>
+    <div className="flex justify-self-start py-2 md:py-3 space-x-2">
+    <p>Screenprinted in Tokyo by @creationprintingservice</p>
+    </div>
     </div>
     </React.Fragment>
   );
