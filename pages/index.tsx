@@ -30,7 +30,7 @@ export default function IndexPage({ products }) {
       <React.Fragment>
       <Head>
         <meta charSet="UTF-8"/>
-        <title>Chemin de Fer</title>
+        <title>Chemin De Fer</title>
         <html lang="en" />
       </Head>
     
