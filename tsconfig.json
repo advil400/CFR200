@@ -22,7 +22,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "pages/products/[permalink].js", "components/ProductImages.js"  ],
   "exclude": [
     "node_modules"
   ]

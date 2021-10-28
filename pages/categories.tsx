@@ -17,7 +17,7 @@ export default function CategoriesPage({ categories }) {
   return (
     <React.Fragment>
     <Head>
-        <meta charset="UTF-8"/>
+        <meta charSet="UTF-8"/>
         <title>Categories</title>
         <html lang="en" />
     </Head>

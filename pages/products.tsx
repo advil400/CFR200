@@ -17,7 +17,7 @@ export default function ProductsPage({ products }) {
   return (
     <React.Fragment>
     <Head>
-        <meta charset="UTF-8"/>
+        <meta charSet="UTF-8"/>
         <title>Cart</title>
         <html lang="en" />
     </Head>

@@ -10,7 +10,7 @@ function VariantPicker({ variantGroups = [], defaultValues = {}, ...props }) {
           key={group.id}
         >
           <label htmlFor={group.id}>
-            {group.name}:
+            {group.name}: {' '}   
           </label>
 
           <select className=""

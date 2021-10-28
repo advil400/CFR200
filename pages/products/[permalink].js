@@ -75,7 +75,7 @@ export default function ProductPage({ product }) {
   return (
     <React.Fragment>
     <Head>
-        <meta charset="UTF-8"/>
+        <meta charSet="UTF-8"/>
         <title>Product Page</title>
         <html lang="en" />
       </Head>
@@ -85,11 +85,11 @@ export default function ProductPage({ product }) {
     </header>
     </div>
     <div className="container mx-auto">
-    <div className="static inline-block mx-auto">
-      <h1 font-sans>{product.name}</h1>
-      <div className="inline-block xl:scale-75 pb-40">
+    <div className="static inline-block mx-auto">     
+      <div className="inline-block xl:scale-75">
       <ProductImages images={images} />
       </div>
+      <h1 font-sans>{product.name}</h1>
       {product.price.formatted_with_symbol}
       <div>{product.description}</div>
     </div>
@@ -98,7 +98,7 @@ export default function ProductPage({ product }) {
                     defaultValues={initialVariants}
                     onChange={handleVariantChange}
                   />
-      <button className="appearance-none" onClick={addToCart}>Add to Cart</button>
+      <button onClick={addToCart}>Add to Cart</button>
     </div>
     </React.Fragment>
   );
