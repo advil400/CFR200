@@ -10,7 +10,7 @@ function Header() {
     <header className="block md:fixed md:left-0 md:top-0 w-full z-50">
       <Link href="/" passHref={true}>
           <div className=" fixed top-5 left-5 hover:blur-xs">
-          <Image src={CF} height='30%' width='30%' alt="Chemin De Fer Logo" />
+          <Image src={CF} height='30%' width='30%' alt="Chemin de Fer Logo" />
           </div>
       </Link>
       <span/>

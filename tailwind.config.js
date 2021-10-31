@@ -25,7 +25,7 @@ module.exports = {
     },
     extend: {
       blur: {
-        xs: '1px'
+        xs: '0.5px'
       },
       fontFamily: {
         'sans': ['Piezo', 'Helvetica', 'Arial', 'sans-serif']

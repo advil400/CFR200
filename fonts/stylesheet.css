@@ -3,34 +3,34 @@
     font-family: 'Piezo';
     font-style: normal;
     font-weight: 400;
-    src: local('Piezo'), url(./piezo.woff2), format('woff2');
+    src: local('Piezo'), url(./piezo.woff2), format('woff2'), url(./piezo.woff), format('woff');
   }
 
   @font-face {
     font-family: 'Piezo';
     font-style: normal;
     font-weight: 500;
-    src: local('Piezo Medium'), url(./piezo-medium.woff2), format('woff2');
+    src: local('Piezo Medium'), url(./piezo-medium.woff2), format('woff2'), url(./piezo-medium.woff), format('woff');
   }
 
   @font-face {
     font-family: 'Piezo';
     font-style: normal;
     font-weight: 700;
-    src: local('Piezo Bold'), url(./piezo-bold.woff2), format('woff2');
+    src: local('Piezo Bold'), url(./piezo-bold.woff2), format('woff2'), url(./piezo-bold.woff), format('woff');
   }
 
   @font-face {
     font-family: 'Piezo';
     font-style: normal;
     font-weight: 800;
-    src: local('Piezo Extrabold'), url(./piezo-extrabold.woff2), format('woff2');
+    src: local('Piezo Extrabold'), url(./piezo-extrabold.woff2), format('woff2'), url(./piezo-extrabold.woff), format('woff');
   }
 
   @font-face {
     font-family: 'Piezo';
     font-style: normal;
     font-weight: 900;
-    src: local('Piezo Black'), url(./piezo-black.woff2), format('woff2');
+    src: local('Piezo Black'), url(./piezo-black.woff2), format('woff2'), url(./piezo-black.woff), format('woff');
   }
 }
