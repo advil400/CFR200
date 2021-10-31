@@ -5,6 +5,7 @@ import ProductImages from "../../components/ProductImages";
 import Header from "../../components/Header";
 import Head from "next/head";
 
+
 import { useCartDispatch } from "../../context/cart";
 
 export async function getStaticProps({ params }) {
@@ -82,27 +83,26 @@ export default function ProductPage({ product }) {
     </Head>
 
     <div className="container fixed block mx-auto z-50">
-    <header className="col-span-3 row-span-1 object-top pb-20">
-    <Header />
-    </header>
+      <header className="col-span-3 row-span-1 object-top pb-20">
+        <Header />
+      </header>
     </div>
 
     
-    <div className="relative container flex flex-initial lg:flex-row flex-col mx-auto mt-20 place-content-center">
+    <div className="relative container flex flex-initial justify-between lg:flex-row flex-col mx-auto mt-20 place-content-center">
 
-    <div className="flex-shrink order-1 ">              
+    <div className="flex flex-1 flex-col max-w-4xl order-2 lg:order-1">              
         <ProductImages images={images} />           
     </div>
-
-    
       
-      <div className="max-w-md object-right-top bg-gray-50 border-1 rounded-lg border-gray-300 px-3 order-2 z-40 h-full mx-auto">
+    <div className="object-right-top bg-gray-50 border-1 rounded-lg border-gray-300 px-3 order-1 lg:order-2 z-40 h-full mx-auto mt-3 mb-6">
+        
         <div className="flex flex-row justify-between pt-3 pb-2">
-          <span className="font-medium text-md">{product.name}</span>
-          <span className="font-normal text-md">{product.price.formatted_with_symbol}</span>
+          <span className="text-lg">{product.name}</span>
+          <span className="text-md">{product.price.formatted_with_symbol}</span>
         </div>
 
-      <div className="flex flex-row justify-between pt-2 pb-2 ">
+      <div className="flex flex-row justify-between space-y-1 pt-2 pb-2 ">
         <VariantPicker
                     variantGroups={variantGroups}
                     defaultValues={initialVariants}
@@ -112,9 +112,10 @@ export default function ProductPage({ product }) {
       </div>
 
       <div className="pt-1 pb-3">
-      <p className="font-normal text-sm">Screenprinted in Tokyo by @creationprintingservice</p>
+        <p className="font-normal text-xs">Screenprinted in Tokyo by @creationprintingservice</p>
       </div>
-      </div>
+
+    </div>
       
     
 
