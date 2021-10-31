@@ -14,7 +14,7 @@ function Header() {
           </div>
       </Link>
       <span/>
-      <div className="fixed text-sm bg-gray-50 text-black top-5 right-5 border-1 rounded-lg border-gray-300 hover:border-gray-400 hover:bg-gray-200 p-0.5" >
+      <div className="fixed text-sm bg-gray-50 text-black top-5 right-5 border-1 rounded-lg border-gray-300 hover:border-gray-400 hover:bg-gray-200 p-1" >
         <CartSummary />
       </div>
     </header>

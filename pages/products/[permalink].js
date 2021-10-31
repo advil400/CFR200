@@ -87,35 +87,41 @@ export default function ProductPage({ product }) {
     </header>
     </div>
 
-    <div className="container pt-10 pb-5 px-20 z-40">
-      <div className="flex justify-evenly">     
-       <div className="">
-        <ProductImages images={images} />
-       </div>
-      </div>
+    
+    <div className="relative container flex flex-initial lg:flex-row flex-col mx-auto mt-20 place-content-center">
+
+    <div className="flex-shrink order-1 ">              
+        <ProductImages images={images} />           
     </div>
 
-    <div className="container place-self-center mx-auto ">
+    
+      
+      <div className="max-w-md object-right-top bg-gray-50 border-1 rounded-lg border-gray-300 px-3 order-2 z-40 h-full mx-auto">
+        <div className="flex flex-row justify-between pt-3 pb-2">
+          <span className="font-medium text-md">{product.name}</span>
+          <span className="font-normal text-md">{product.price.formatted_with_symbol}</span>
+        </div>
 
-    <div className="flex justify-evenly">
-    <span className="font-medium sm:text-base md:text-lg lg:text-2xl xl:text-3xl">{product.name}</span>
-    <span className="font-normal sm:text-sm md:text-base lg:text-lg">{product.price.formatted_with_symbol}</span>
-    </div>
-
-    <div className="block mx-auto bg-gray-50 text-black border-1 rounded-lg border-gray-300">
-    <div className="flex box-content justify-evenly ">
-      <VariantPicker
+      <div className="flex flex-row justify-between pt-2 pb-2 ">
+        <VariantPicker
                     variantGroups={variantGroups}
                     defaultValues={initialVariants}
                     onChange={handleVariantChange}
                   />
-      <button onClick={addToCart}>Add to Cart</button>
+        <button className="text-xs bg-gray-200 text-black border-1 max-h-7 border-gray-300 rounded-full hover:border-gray-400 hover:bg-gray-200 py-1 px-1.5" onClick={addToCart}>Add to Cart</button>     
+      </div>
+
+      <div className="pt-1 pb-3">
+      <p className="font-normal text-sm">Screenprinted in Tokyo by @creationprintingservice</p>
       </div>
       </div>
-    <div className="flex justify-self-start py-2 md:py-3 space-x-2">
-    <p className="font-normal">Screenprinted in Tokyo by @creationprintingservice</p>
-    </div>
-    </div>
+      
+    
+
+      </div>
+
+  
+      
     </React.Fragment>
   );
 }

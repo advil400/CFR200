@@ -33,4 +33,7 @@
     font-weight: 900;
     src: local('Piezo Black'), url(./piezo-black.woff2), format('woff2'), url(./piezo-black.woff), format('woff');
   }
+  @media screen and (-webkit-min-device-pixel-ratio:0) {@font-face {font-family: 'Piezo';
+    src: url('../../includes/fonts/chunk-webfont.svg') format('svg');
+    }}
 }
