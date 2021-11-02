@@ -1,7 +1,7 @@
 module.exports = {
   mode: 'jit',
   purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: 'media',
   theme: {
     fontSize: {
       '2xs': '.5rem',
@@ -18,6 +18,14 @@ module.exports = {
       '6xl': '4rem',
       '7xl': '5rem'
      },
+     borderRadius: {
+      'none': '0',
+      'sm': '0.125rem',
+      DEFAULT: '0.25rem',
+      'md': '0.375rem',
+      'lg': '10px',
+      'full': '9999px',
+    },
 
     borderWidth: {
       DEFAULT: '1px',
@@ -39,20 +47,24 @@ module.exports = {
           lg: '4rem',
           xl: '5rem',
           '2xl': '6rem',
+          
       },
     },
     extend: {
+      
       blur: {
         xs: '0.5px'
       },
       fontFamily: {
-        'sans': ['Piezo', 'Helvetica', 'Arial', 'sans-serif']
+        'piezo': ['Piezo', 'Helvetica', 'Arial', 'sans-serif']
       }
     },
   },
   variants: {
     extend: {
-      blur: ['hover', 'focus']
+      backgroundOpacity: ['dark'],
+      filter: ['dark'],
+      blur: ['hover', 'focus', 'dark']
     },
   },
   plugins: [],

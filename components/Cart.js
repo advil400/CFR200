@@ -11,13 +11,13 @@ export default function Cart() {
 
   return (
     <div>
-      <div>
+      <div className="text-black dark:text-white">
         {line_items.map((item) => (
           <CartItem key={item.id} {...item} />
         ))}
       </div>
 
-      <div>
+      <div className="text-black dark:text-white">
         {isEmpty ? (
           <p>Your cart is empty.</p>
         ) : (

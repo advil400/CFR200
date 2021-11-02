@@ -4,12 +4,13 @@ function ProductImages({ images = [] }) {
   if (!images || images.length === 0) return null;
 
   return images.map(({ id, url, image_dimensions }) => (
-    <div className="container object-scale-down" key={id}>
+    <div className="container" key={id}>
       <Image
         key={id}
         src={url}
         width={image_dimensions.width}
         height={image_dimensions.height}
+        priority
         quality={100}
         alt=""
       />

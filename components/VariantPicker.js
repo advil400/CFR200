@@ -6,14 +6,16 @@ function VariantPicker({ variantGroups = [], defaultValues = {}, ...props }) {
   return (
     <div>
       {variantGroups.map(({ options, ...group }) => (
-        <div
+        <div className=""
           key={group.id}
         >
-          <label htmlFor={group.id}>
+          {/*
+          <label className="text-sm"  htmlFor={group.id}>
             {group.name}: {' '}   
           </label>
+          */}
 
-          <select className="text-xs flex-nowrap my-1 bg-gray-100 text-black border-1 max-h-7 border-gray-300 rounded-full hover:border-gray-400 hover:bg-gray-200 p-1 px-1.5"
+          <select className="text-md my-1 bg-gray-50 text-black border-1 max-h-8 rounded-full border-gray-200 dark:border-gray-400 hover:border-gray-100 hover:bg-gray-200 px-1.5 py-1"
             id={group.id}
             defaultValue={defaultValues[group.id]}
             {...props}

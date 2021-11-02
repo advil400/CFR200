@@ -7,35 +7,35 @@
         font-family: 'Piezo';
         font-style: normal;
         font-weight: 400;
-        src: local('Piezo'), url(/fonts/piezo.woff2), format('woff2'), url(/fonts/piezo.woff), format('woff');
+        src: url(/public/fonts/piezo.woff2), format('woff2'), url(/public/fonts/piezo.woff), format('woff');
       }
     
       @font-face {
         font-family: 'Piezo';
         font-style: normal;
         font-weight: 500;
-        src: local('Piezo Medium'), url(/fonts/piezo-medium.woff2), format('woff2'), url(/fonts/piezo-medium.woff), format('woff');
+        src: url(/public/fonts/piezo-medium.woff2), format('woff2'), url(/public/fonts/piezo-medium.woff), format('woff');
       }
     
       @font-face {
         font-family: 'Piezo';
         font-style: normal;
         font-weight: 700;
-        src: local('Piezo Bold'), url(/fonts/piezo-bold.woff2), format('woff2'), url(/fonts/piezo-bold.woff), format('woff');
+        src: url(/public/fonts/piezo-bold.woff2), format('woff2'), url(/public/fonts/piezo-bold.woff), format('woff');
       }
     
       @font-face {
         font-family: 'Piezo';
         font-style: normal;
         font-weight: 800;
-        src: local('Piezo Extrabold'), url(../fonts/piezo-extrabold.woff2), format('woff2'), url(../fonts/piezo-extrabold.woff), format('woff');
+        src: url(/public/fonts/piezo-extrabold.woff2), format('woff2'), url(/public/fonts/piezo-extrabold.woff), format('woff');
       }
     
       @font-face {
         font-family: 'Piezo';
         font-style: normal;
         font-weight: 900;
-        src: local('Piezo Black'), url(../fonts/piezo-black.woff2), format('woff2'), url(../fonts/piezo-black.woff), format('woff');
+        src: url(/public/fonts/piezo-black.woff2), format('woff2'), url(/public/fonts/piezo-black.woff), format('woff');
       }
      
-    }
+    };
