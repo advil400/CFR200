@@ -15,7 +15,7 @@ function VariantPicker({ variantGroups = [], defaultValues = {}, ...props }) {
           </label>
           */}
 
-          <select className="text-md my-1 bg-gray-50 text-black border-1 max-h-8 rounded-full border-gray-200 dark:border-gray-400 hover:border-gray-100 hover:bg-gray-200 px-1.5 py-1"
+          <select className="cursor-pointer text-md my-1 bg-gray-50 text-black border-1 max-h-8 rounded-full border-gray-200 dark:border-gray-400 hover:border-gray-300 hover:bg-gray-100 px-1.5 py-1"
             id={group.id}
             defaultValue={defaultValues[group.id]}
             {...props}

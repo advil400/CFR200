@@ -98,11 +98,11 @@ export default function ProductPage({ product }) {
                     defaultValues={initialVariants}
                     onChange={handleVariantChange}
                   />
-          <button className="text-sm bg-gray-50 dark:bg-gray-100 hover:bg-gray-100 dark:hover:bg-gray-400 text-black border-1 max-h-9 rounded-full border-gray-300 dark:border-gray-400 hover:border-gray-300 px-2" onClick={addToCart}>Add to Cart</button>     
+          <button className="text-sm bg-gray-50 dark:bg-gray-100 hover:bg-gray-100 dark:hover:bg-gray-200 text-black border-1 max-h-9 rounded-full border-gray-300 dark:border-gray-400 hover:border-gray-300 px-2" onClick={addToCart}>Add to Cart</button>     
         </div>
 
         <div className="pb-3">
-          <p className="text-sm text-black ">Screenprinted in Tokyo by @creationprintingservice</p>
+          <p className="text-sm text-black ">{product.seo.description}</p>
         </div>
 
         </div>
