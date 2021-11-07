@@ -11,13 +11,13 @@ export default function Cart() {
 
   return (
     <div>
-      <div className="text-black dark:text-white">
+      <div className="text-black dark:text-white h-full flex flex-col justify-between">
         {line_items.map((item) => (
           <CartItem key={item.id} {...item} />
         ))}
       </div>
 
-      <div className="text-black dark:text-white">
+      <div className="text-black dark:text-white flex items-center justify-between py-3 md:py-4 lg:py-5">
         {isEmpty ? (
           <p>Your cart is empty.</p>
         ) : (
