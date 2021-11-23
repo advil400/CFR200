@@ -39,8 +39,8 @@ export default function IndexPage({ products }) {
         <div key={permalink} className="flex flex-initial flex-col mx-auto max-w-2xl" >
           <Link  href={`/products/${permalink}`} passHref={true}>
             <a>
-              <Image src={CF001o} layout="responsive" quality="75" alt="Chemin de Fer Varsity Sweater in Olive" priority />
-              <Image src={CF001p} layout="responsive" quality="75" alt="Chemin de Fer Varsity Sweater in Purple" priority />
+              <Image src={CF001o} layout="responsive" quality="80" alt="Chemin de Fer Varsity Sweater in Olive" priority />
+              <Image src={CF001p} layout="responsive" quality="80" alt="Chemin de Fer Varsity Sweater in Purple" priority />
             </a>
           </Link>
         </div>
