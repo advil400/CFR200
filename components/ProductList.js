@@ -8,10 +8,10 @@ function ProductList({ products }) {
   return products.map(({ name, permalink, price }, index) => (
     <span key={permalink}>
     {index ? ", " : ""}
-    <Link href={`/products/${permalink}`}>
+    <Link href={`/products/${permalink}`} passHref>
       <a className="flex justify-evenly py-2 md:py-3 space-x-1 dark:text-white">
-          <span className="text-sm md:text-base lg:text-lg">{name}</span>
-          <span className="text-sm md:text-base lg:text-lg">
+          <span className="text-md md:text-lg lg:text-xl">{name}</span>
+          <span className="text-sm md:text-base lg:text-md">
             {price.formatted_with_symbol}
           </span>
       </a>
