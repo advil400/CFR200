@@ -11,7 +11,7 @@ function ProductImages({ images = [] }) {
         width={image_dimensions.width}
         height={image_dimensions.height}
         priority
-        quality={75}
+        quality={80}
         alt=""
       />
     </div>
