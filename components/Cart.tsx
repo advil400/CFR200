@@ -16,7 +16,7 @@ export default function Cart() {
         ))}
       </div>
 
-      <div className="place-content-center text-black py-10 self-end">
+      <div className="text-black py-10">
         {isEmpty ? (
           <p>Your cart is empty.</p>
         ) : (
