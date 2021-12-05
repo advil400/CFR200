@@ -37,10 +37,9 @@ function CartItem({ id, name, quantity, line_total, selected_options }) {
 
   return (
    
-  
-    <div className="text-black flex flex-auto py-4 md:items-end border-b border-black">
-      <div className="">
-        <div className="">
+    <div className="text-black flex flex-auto py-4 md:items-end border-b justify-around border-black">
+      <div className="flex flex-row md:flex-row md:items-end flex-grow">
+        <div className="flex flex-col">
           <p className="font-sans text-md md:text-lg lg:text-xl">
             {name}
           </p>
@@ -54,23 +53,25 @@ function CartItem({ id, name, quantity, line_total, selected_options }) {
             </p>
           )}
         </div>
+        <span />
         <div className="flex flex-col items-start md:items-end justify-between flex-grow">
-          <div className="text-lg  md:text-xl lg:text-2xl">
+
+          <div className="text-xl md:text-2xl">
             {line_total.formatted_with_symbol}
           </div>
+
           <div className="text-black text-xs w-full flex md:flex-col items-center md:items-end">
             <div className="md:pb-4 lg:pb-5 inline-flex items-center">
-              <span className="pr-2">Qty:</span>
               <button
                 onClick={decrementQuantity}
-                className="appearance-none inline-flex items-center justify-center rounded-lg border border-gray-300 dark:border-gray-400 w-5 h-5 hover:bg-gray-100 dark:hover:bg-gray-200 hover:text-white dark:hover:text-black transition"
+                className="inline-flex items-center justify-center rounded-lg border border-gray-500 px-3 py-2 w-4 h-4 hover:bg-gray-100 dark:hover:bg-gray-200 transition"
               >
                 -
               </button>
               <span className="px-2 md:text-lg">{quantity}</span>
               <button
                 onClick={incrementQuantity}
-                className="appearance-none inline-flex items-center justify-center rounded-lg border border-gray-300 dark:border-gray-400 w-5 h-5 hover:bg-gray-100 dark:hover:bg-gray-200 hover:text-white dark:hover:text-black"
+                className="inline-flex items-center justify-center rounded-lg border border-gray-500 px-3 py-2 w-4 h-4 hover:bg-gray-100 dark:hover:bg-gray-200 transition"
               >
                 +
               </button>
@@ -78,7 +79,7 @@ function CartItem({ id, name, quantity, line_total, selected_options }) {
             <div>
               <button
                 onClick={handleRemoveItem}
-                className="appearance-none inline-flex items-center justify-center rounded-lg border border-gray-600  text-black px-1 h-5 opacity-70 hover:opacity-100 focus:opacity-100 focus:outline-none transition"
+                className="inline-flex items-center justify-center rounded-lg border border-gray-400 text-gray-700 px-1 h-5 opacity-70 hover:opacity-100 focus:opacity-100 focus:outline-none transition"
               >
                 Remove
               </button>

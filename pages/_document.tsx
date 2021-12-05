@@ -11,7 +11,7 @@ class MyDocument extends Document {
       <Html>
         <Head />
             <meta charSet="UTF-8"/>
-            <title>Product Page</title>
+            <title> Chemin de Fer </title>
             <html lang="en" />
         <body className="bg-gray-50 dark:bg-black">
           <Main />

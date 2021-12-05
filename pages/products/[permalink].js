@@ -97,7 +97,7 @@ export default function ProductPage({ product }) {
                       defaultValues={initialVariants}
                       onChange={handleVariantChange}
               />
-            <button className="text-sm bg-gray-50 dark:bg-gray-100 hover:bg-gray-200 text-black border-1 max-h-9 rounded-full border-gray-300 dark:border-gray-400  px-2" onClick={addToCart}>Add to Cart</button>     
+            <button className="text-sm bg-gray-50 dark:bg-gray-100 hover:bg-gray-200 text-black border-1 max-h-9 rounded-full border-gray-300 dark:border-gray-400 px-2" onClick={addToCart}>Add to Cart</button>     
           </div>
 
           <div className="pb-3">

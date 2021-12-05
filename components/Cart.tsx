@@ -9,14 +9,14 @@ export default function Cart() {
   const isEmpty = line_items.length === 0;
 
   return (
-    <div className="container flex flex-auto max-w-md bg-gray-100 dark:bg-gray-200 border-1 rounded-lg border-gray-300 dark:border-gray-100 mx-auto mt-3 mb-6">
-      <div className="text-black justify-between mx-auto">
+    <div className="container flex flex-col max-w-md bg-gray-100 dark:bg-gray-200 border-1 rounded-lg border-gray-300 dark:border-gray-100 mx-auto">
+      <div className="text-black justify-between">
         {line_items.map((item) => (
           <CartItem key={item.id} {...item} />
         ))}
       </div>
 
-      <div className="text-black place-self-end py-10">
+      <div className="place-content-center text-black py-10 self-end">
         {isEmpty ? (
           <p>Your cart is empty.</p>
         ) : (
