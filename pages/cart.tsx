@@ -7,7 +7,7 @@ import Image from "next/image";
 export default function CartPage(){
 return(
     <React.Fragment>
-
+{/*
         <div className="container block mx-auto pb-20">
 
             <Link href="/" passHref={true}>
@@ -17,10 +17,10 @@ return(
             </Link>
 
         </div>
-
+*/}
         <span />
 
-        <div className="top-5 right-5">
+        <div className="pt-10">
             <Cart />
         </div>
 
