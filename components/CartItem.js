@@ -67,14 +67,14 @@ function CartItem({ id, name, quantity, line_total, selected_options }) {
             <div className="py-2 inline-flex items-center">
               <button
                 onClick={decrementQuantity}
-                className="bg-white dark:bg-gray-100 inline-flex items-center justify-center rounded-full border border-gray-300 hover:border-gray-400 dark:border-gray-100 px-3 py-2 w-4 h-4 transition"
+                className="bg-white dark:bg-gray-100 inline-flex items-center justify-center rounded-full border border-gray-300 hover:border-gray-400 px-3 py-2 w-4 h-4 transition"
               >
                 -
               </button>
               <span className="px-2 text-lg">{quantity}</span>
               <button
                 onClick={incrementQuantity}
-                className="bg-white dark:bg-gray-100 inline-flex items-center justify-center rounded-full border border-gray-300 hover:border-gray-400 dark:border-gray-100 px-3 py-2 w-4 h-4 transition"
+                className="bg-white dark:bg-gray-100 inline-flex items-center justify-center rounded-full border border-gray-300 hover:border-gray-400 px-3 py-2 w-4 h-4 transition"
               >
                 +
               </button>

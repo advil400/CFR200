@@ -15,7 +15,7 @@ export default function Cart() {
       <div className="inline-flex pt-4 object-left-top">
 
         <Link href="/" passHref={true}>
-        <a className="dark:filter dark:invert">
+        <a>
         <Image src={CF} height='40%' width='40%' alt="Chemin de Fer Logo" priority />
         </a>
         </Link>
