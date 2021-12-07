@@ -1,5 +1,5 @@
-import {useCycle} from "framer-motion";
-import { createContext, useReducer, useContext, useEffect } from "react";
+
+import { createContext, useReducer, useContext, useEffect, useState } from "react";
 
 import commerce from "../lib/commerce";
 
@@ -27,7 +27,7 @@ const reducer = (state, action) => {
 };
 
 export const CartProvider = ({ children }) => {
-  const [open, toggle] = useCycle(false, true);
+  const [open, toggle] = useState(false, true);
   const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {

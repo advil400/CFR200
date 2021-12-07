@@ -1,7 +1,5 @@
 import { useFormContext } from "react-hook-form";
 
-import Chevron from "../../svg/chevron.svg";
-
 import FormError from "./FormError";
 
 function FormSelect({
@@ -40,7 +38,7 @@ function FormSelect({
         </select>
 
         <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-black">
-          <Chevron />
+          &#8964;
         </div>
       </div>
 

@@ -5,14 +5,11 @@ import { useStripe, useElements } from "@stripe/react-stripe-js";
 import { useCartDispatch } from "../../context/cart";
 import { useCheckoutState, useCheckoutDispatch } from "../../context/checkout";
 
-import ExtraFieldsForm from "./ExtraFieldsForm";
 import ShippingForm from "./ShippingForm";
 import BillingForm from "./BillingForm";
 import Success from "./Success";
 import CheckoutSummary from "./CheckoutSummary";
 import OrderSummary from "./OrderSummary";
-
-import LoadingSVG from "../../svg/loading.svg";
 
 function Checkout({ cartId }) {
   const [order, setOrder] = useState();
@@ -151,7 +148,6 @@ function Checkout({ cartId }) {
   if (!id)
     return (
       <div className="h-full flex flex-col items-center justify-center space-y-6">
-        <LoadingSVG className="w-10 md:w-16 fill-current" />
         <p className="text-black">Preparing checkout</p>
       </div>
     );

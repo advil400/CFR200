@@ -1,6 +1,5 @@
 import { useCheckoutState } from "../../context/checkout";
 
-import Button from "../Button";
 
 function CheckoutSummary({ subtotal, tax, shipping, line_items = [], total }) {
   const { processing, error } = useCheckoutState();
@@ -27,18 +26,14 @@ function CheckoutSummary({ subtotal, tax, shipping, line_items = [], total }) {
         <div className="w-full md:w-1/2 md:flex md:items-end md:justify-end">
           <div className="flex items-center space-x-3">
             {error && <span className="text-red-500 text-sm">{error}</span>}
-            <Button
+            <button
               type="submit"
-              className={cc([
-                "appearance-none leading-none p-1 md:p-2 lg:p-3 text-lg md:text-xl",
-                {
-                  "opacity-75 cursor-not-allowed": processing,
-                },
-              ])}
+              className=
+                "appearance-none leading-none p-1 md:p-2 lg:p-3 text-lg md:text-xl"
               disabled={processing}
             >
               {processing ? "Processing order" : "Continue"}
-            </Button>
+            </button>
           </div>
         </div>
       </div>

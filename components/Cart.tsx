@@ -39,9 +39,9 @@ export default function Cart() {
             <div>
               <Link href="/checkout" passHref={true}>
               <button
-                className="appearance-none leading-none p-1 md:p-1.5 lg:px-3.5 text-lg md:text-xl"
+                className="text-sm bg-gray-50 dark:bg-gray-100 hover:bg-gray-100 text-black border-1 max-h-9 rounded-full border-gray-300 dark:border-gray-400 px-2"
               >
-                Checkout 🡒
+                Checkout &rarr;
               </button>
               </Link>
             </div>
