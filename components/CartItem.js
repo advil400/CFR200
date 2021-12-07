@@ -67,14 +67,14 @@ function CartItem({ id, name, quantity, line_total, selected_options }) {
             <div className="inline-flex items-center">
               <button
                 onClick={decrementQuantity}
-                className="bg-white dark:bg-gray-100 inline-flex items-center justify-center rounded-full border border-gray-300 hover:border-gray-400 px-4 py-2 w-5 h-5 transition"
+                className="bg-white dark:bg-gray-100 inline-flex items-center justify-center rounded-full border border-gray-300 hover:border-gray-400 px-4 py-3  w-5 h-5 transition"
               >
                 -
               </button>
               <span className="px-2 text-lg">{quantity}</span>
               <button
                 onClick={incrementQuantity}
-                className="bg-white dark:bg-gray-100 inline-flex items-center justify-center rounded-full border border-gray-300 hover:border-gray-400 px-4 py-2 w-5 h-5 transition"
+                className="bg-white dark:bg-gray-100 inline-flex items-center justify-center rounded-full border border-gray-300 hover:border-gray-400 px-4 py-3 w-5 h-5 transition"
               >
                 +
               </button>
@@ -82,7 +82,7 @@ function CartItem({ id, name, quantity, line_total, selected_options }) {
             <div>
               <button
                 onClick={handleRemoveItem}
-                className="inline-flex items-center text-xs justify-center rounded-lg border border-gray-400 text-black px-1 h-5 opacity-70 hover:opacity-100 transition mt-2"
+                className="inline-flex items-center text-xs justify-center rounded-lg border border-gray-400 hover:border-gray-400 text-black px-1 h-5 opacity-70 hover:opacity-100 transition mt-2"
               >
                 Remove
               </button>

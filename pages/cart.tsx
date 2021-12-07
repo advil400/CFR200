@@ -7,7 +7,7 @@ import Image from "next/image";
 export default function CartPage(){
 return(
     <React.Fragment>
-{/*
+{/* FRONTPAGE: DO DROP DOWN IMAGES, LIST PRODUCTS WITH A + SYMBOL AS PREFIX, E.G: + Varsity Sweater {price}
         <div className="container block mx-auto pb-20">
 
             <Link href="/" passHref={true}>

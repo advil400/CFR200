@@ -28,13 +28,22 @@ export default function Cart() {
         ))}
       </div>
 
-      <div className="text-black py-10">
+      <div className="text-black py-6">
         {isEmpty ? (
           <p>Your cart is empty.</p>
         ) : (
           <>
-            <div>
+            <div className="text-lg">
               Subtotal: {subtotal?.formatted_with_symbol} 
+            </div>
+            <div>
+              <Link href="/checkout" passHref={true}>
+              <button
+                className="appearance-none leading-none p-1 md:p-1.5 lg:px-3.5 text-lg md:text-xl"
+              >
+                Checkout 🡒
+              </button>
+              </Link>
             </div>
             
           </>
