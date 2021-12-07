@@ -18,9 +18,7 @@ return(
 
         </div>
 */}
-        <span />
-
-        <div className="pt-10">
+        <div className="my-5 mx-4">
             <Cart />
         </div>
 
