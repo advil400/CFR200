@@ -59,22 +59,22 @@ function CartItem({ id, name, quantity, line_total, selected_options }) {
 
         <div className="flex flex-col items-end justify-between flex-grow order-2">
 
-          <div className="text-xl">
+          <div className="text-2xl">
             {line_total.formatted_with_symbol}
           </div>
 
-          <div className="text-black text-xs w-full flex flex-col items-end">
-            <div className="py-2 inline-flex items-center">
+          <div className="text-black bold text-md w-full flex flex-col items-end">
+            <div className="inline-flex items-center">
               <button
                 onClick={decrementQuantity}
-                className="bg-white dark:bg-gray-100 inline-flex items-center justify-center rounded-full border border-gray-300 hover:border-gray-400 px-3 py-2 w-4 h-4 transition"
+                className="bg-white dark:bg-gray-100 inline-flex items-center justify-center rounded-full border border-gray-300 hover:border-gray-400 px-4 py-2 w-5 h-5 transition"
               >
                 -
               </button>
               <span className="px-2 text-lg">{quantity}</span>
               <button
                 onClick={incrementQuantity}
-                className="bg-white dark:bg-gray-100 inline-flex items-center justify-center rounded-full border border-gray-300 hover:border-gray-400 px-3 py-2 w-4 h-4 transition"
+                className="bg-white dark:bg-gray-100 inline-flex items-center justify-center rounded-full border border-gray-300 hover:border-gray-400 px-4 py-2 w-5 h-5 transition"
               >
                 +
               </button>
@@ -82,7 +82,7 @@ function CartItem({ id, name, quantity, line_total, selected_options }) {
             <div>
               <button
                 onClick={handleRemoveItem}
-                className="inline-flex items-center justify-center rounded-lg border border-gray-400 text-gray-700 px-1 h-5 opacity-70 hover:opacity-100 transition"
+                className="inline-flex items-center text-xs justify-center rounded-lg border border-gray-400 text-black px-1 h-5 opacity-70 hover:opacity-100 transition mt-2"
               >
                 Remove
               </button>
